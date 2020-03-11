@@ -51,7 +51,7 @@ contract BooklibraryContract=
 window.addEventListener('load',async function(){
     client=await Ae.Aepp();
     contractInstance=await client.getContractInstance(contractSource,{contractAddress});
-    let allBooks=(await contractInstance.methods.getUsersListOfBook()).decodedResult;
+    let allBooks=(await contractInstance.methods.getUsersListOfBooks()).decodedResult;
     console.log(allBooks,"all books");
     allBooks.map(book=>{
         addBookToDom(book.name,book.isbn);
